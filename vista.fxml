@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="1366.0" style="-fx-background-color: #B5FBB9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VistaController">
+   <children>
+      <Label fx:id="T" layoutX="943.0" layoutY="283.0" text="Temperatura:">
+         <font>
+            <Font name="Britannic Bold" size="12.0" />
+         </font></Label>
+      <Button layoutX="816.0" layoutY="119.0" mnemonicParsing="false" onAction="#iniciarTemperatura" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #2EF6F6; -fx-background-radius: 20;" text="Iniciar">
+         <font>
+            <Font name="Serif Bold" size="20.0" />
+         </font></Button>
+      <Label fx:id="lblTemperatura" layoutX="1015.0" layoutY="281.0" prefHeight="17.0" prefWidth="85.0">
+      	<font>
+            <Font name="Arial Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="943.0" layoutY="230.0" prefHeight="17.0" prefWidth="45.0" text="Fecha:">
+         <font>
+            <Font name="Britannic Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="lblFechaTemperatura" layoutX="979.0" layoutY="230.0" prefHeight="17.0" prefWidth="85.0">
+      	<font>
+            <Font name="Arial Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHoraTemperatura" layoutX="1064.0" layoutY="230.0" prefHeight="17.0" prefWidth="95.0" textAlignment="RIGHT">
+      	<font>
+            <Font name="Arial Italic" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="966.0" layoutY="119.0" mnemonicParsing="false" onAction="#pausarTemperatura" prefHeight="40.0" prefWidth="133.0" style="-fx-background-color: #2EF6F6; -fx-background-radius: 20;" text="Pausar">
+         <font>
+            <Font name="Serif Bold" size="20.0" />
+         </font></Button>
+      <Label fx:id="lblUsuario" layoutX="196.0" layoutY="28.0" prefHeight="17.0" prefWidth="235.0" />
+      <VBox prefHeight="715.0" prefWidth="183.0" style="-fx-background-color: #62DB67;">
+         <children>
+            <ImageView disable="true" fitHeight="165.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ger1.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button mnemonicParsing="false" onAction="#vistaGeneral" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #119F17;" text="General" textFill="#fffbfb">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Serif Bold Italic" size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#vistaTemperatura" prefHeight="46.0" prefWidth="185.0" style="-fx-background-color: #119F17;" text="Temperatura" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Serif Bold Italic" size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#vistaAmbiental" prefHeight="46.0" prefWidth="185.0" style="-fx-background-color: #119F17;" text="Humedad Ambiental" textFill="#fffbfb">
+               <font>
+                  <Font name="Serif Bold Italic" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#vistaSuelo" prefHeight="45.0" prefWidth="183.0" style="-fx-background-color: #119F17;" text="Humedad Suelo" textFill="#f8f8f8">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Serif Bold Italic" size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#vistaSalir" prefHeight="45.0" prefWidth="183.0" style="-fx-background-color: #119F17;" text="Salir" textFill="#f8f8f8">
+               <font>
+                  <Font name="Serif Bold Italic" size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="45.0" />
+               </VBox.margin>
+            </Button>
+         </children></VBox>
+      <VBox layoutX="1149.0" prefHeight="708.0" prefWidth="220.0" style="-fx-background-color: #62DB67;">
+         <children>
+            <Label alignment="CENTER" prefHeight="67.0" prefWidth="210.0" text="Información" textFill="WHITE">
+               <font>
+                  <Font name="Serif Bold Italic" size="29.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="135.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@Maiz.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="54.0" prefWidth="233.0" text="Calidad de maiz" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="151.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ambiental1.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="56.0" prefWidth="224.0" text="Cosecha de calidad">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="148.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@papa.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="52.0" prefWidth="229.0" text="Calidad de papa">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+         </children></VBox>
+      <Label fx:id="A" layoutX="940.0" layoutY="340.0" text="Humedad Ambiental:">
+         <font>
+            <Font name="Britannic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="S" layoutX="942.0" layoutY="395.0" text="Humedad del Suelo:">
+         <font>
+            <Font name="Britannic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAmbiental" layoutX="1050.0" layoutY="338.0" prefHeight="17.0" prefWidth="85.0" textAlignment="RIGHT">
+            <font>
+            <Font name="Arial Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSuelo" layoutX="1049.0" layoutY="393.0" prefHeight="17.0" prefWidth="77.0" textAlignment="RIGHT">
+         <font>
+            <Font name="Arial Italic" size="12.0" />
+         </font>
+      </Label>
+      <HBox layoutX="183.0" prefHeight="70.0" prefWidth="966.0" style="-fx-background-color: #119F17;">
+         <children>
+            <Label prefHeight="70.0" prefWidth="1114.0" text="Dashboard inicio" textFill="WHITE">
+               <font>
+                  <Font name="Serif Bold Italic" size="33.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="393.0">
+               <children>
+                  <Circle fill="#27ff1f" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="#1ffff0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="#f6f7f8" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Label layoutX="228.0" layoutY="94.0" prefHeight="99.0" prefWidth="558.0" text="CONTROL DE INVERNADERO">
+         <font>
+            <Font name="Showcard Gothic" size="33.0" />
+         </font>
+      </Label>
+      <Pane fx:id="pane1" layoutX="196.0" layoutY="212.0" prefHeight="482.0" prefWidth="735.0">
+         <children>
+            <ScrollPane fx:id="sb" prefHeight="480.0" prefWidth="733.0">
+               <content>
+                  <LineChart fx:id="lineChart" prefHeight="473.0" prefWidth="730.0" style="-fx-background-color: #89E091;" title="Datos Generales">
+                    <xAxis>
+                      <CategoryAxis label="Tiempo" prefHeight="80.0" prefWidth="1065.0" side="BOTTOM" fx:id="x" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="y" label="Valor" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <Pane fx:id="pane2" layoutX="196.0" layoutY="212.0" prefHeight="482.0" prefWidth="735.0" visible="false">
+         <children>
+            <ScrollPane fx:id="sb1" prefHeight="480.0" prefWidth="733.0">
+               <content>
+                  <LineChart fx:id="lineChart2" prefHeight="473.0" prefWidth="730.0" style="-fx-background-color: #89E091;" title="Temperatura">
+                     <xAxis>
+                        <CategoryAxis label="Tiempo" prefHeight="80.0" prefWidth="1065.0" side="BOTTOM" fx:id="x1" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="y1" label="Grados" side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <Pane fx:id="pane3" layoutX="196.0" layoutY="212.0" prefHeight="482.0" prefWidth="735.0" visible="false">
+         <children>
+            <ScrollPane fx:id="sb11" prefHeight="480.0" prefWidth="733.0">
+               <content>
+                  <LineChart fx:id="lineChart3" prefHeight="473.0" prefWidth="730.0" style="-fx-background-color: #89E091;" title="Humedad Ambiental">
+                     <xAxis>
+                        <CategoryAxis label="Tiempo" prefHeight="80.0" prefWidth="1065.0" side="BOTTOM" fx:id="x11" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="y11" label="Humedad" side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <Pane fx:id="pane4" layoutX="196.0" layoutY="212.0" prefHeight="482.0" prefWidth="735.0" visible="false">
+         <children>
+            <ScrollPane fx:id="sb111" prefHeight="480.0" prefWidth="733.0">
+               <content>
+                  <LineChart fx:id="lineChart4" prefHeight="473.0" prefWidth="730.0" style="-fx-background-color: #89E091;" title="Humedad del Suelo">
+                     <xAxis>
+                        <CategoryAxis label="Tiempo" prefHeight="80.0" prefWidth="1065.0" side="BOTTOM" fx:id="x111" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="y111" label="Humedad" side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
